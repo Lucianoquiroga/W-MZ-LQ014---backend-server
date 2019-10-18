@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 var appRoutes = require('./routes/app');
 var usuarioRoutes = require('./routes/usuario');
 var loginRoutes = require('./routes/login');
+var busquedaRoutes = require('./routes/busqueda');
+var uploadsRoutes = require('./routes/uploads');
+var imagenesRoutes = require('./routes/imagenes');
 
 
 // Conexión a la base de datos
@@ -28,6 +31,9 @@ mongoose.connection.openUri('mongodb://localhost:27017/aplicacionDB', { useCreat
 // Rutas
 app.use('/usuario', usuarioRoutes);
 app.use('/login', loginRoutes);
+app.use('/busqueda', busquedaRoutes);
+app.use('/uploads', uploadsRoutes);
+app.use('/img', imagenesRoutes);
 app.use('/', appRoutes);
 
 
